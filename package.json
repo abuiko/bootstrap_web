@@ -1,0 +1,25 @@
+{
+  "name": "bootstrap-project",
+  "version": "1.0.0",
+  "description": "project to practice bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abuiko/bootstrap_web.git"
+  },
+  "keywords": [
+    "bootstrap"
+  ],
+  "author": "ABUIKO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abuiko/bootstrap_web/issues"
+  },
+  "homepage": "https://github.com/abuiko/bootstrap_web#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.1"
+  }
+}
