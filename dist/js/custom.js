@@ -174,8 +174,6 @@ const clothes = [
 
 const clothesContainer = document.querySelector(".clothes");
 
-
-
 // functions
 
 function displayClothes(items) {
