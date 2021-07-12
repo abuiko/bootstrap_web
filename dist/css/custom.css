@@ -11,17 +11,20 @@
     border: none;
 }
 
-/* flexbox styling */
+/* jumbotron styling */
 
+.jumbotron-custom {
+    background: rgb(175, 29, 29);
+    padding-top: 35px;
+    padding-bottom: 35px;
 
-
-.flex-jc-c {
-    justify-content: center;
 }
 
-.flex-ai-c {
-    align-items: center;
+h1 {
+    font-size: 1.5rem;
 }
+
+
 
 
 /* font awesome styling */
