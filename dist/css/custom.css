@@ -50,6 +50,10 @@ h1 {
     height: auto;
 }
 
+.carousel {
+    height: 700px;
+}
+
 /* font awesome styling */
 
 i {
