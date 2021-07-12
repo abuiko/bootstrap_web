@@ -61,6 +61,15 @@ i {
     color: rgb(107, 107, 107);
 }
 
+.card-icon i {
+    font-size: 1.8rem;
+}
+
+/* cards */
+.card {
+    margin-bottom: 1rem;
+}
+
 
 /* media queries */
 @media screen and (max-width: 450px) {
@@ -73,9 +82,23 @@ i {
 
     }
 
+    /* jumbotron */
     h1 {
         font-size: 1.2rem;
 
+    }
+
+    /* cards */
+    .card-title {
+        font-size: 0.8rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .card-icon i {
+        font-size: 1.4rem;
     }
 
 }
