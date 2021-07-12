@@ -28,6 +28,7 @@ body {
 
 h1 {
     font-size: 1.5rem;
+    text-align: center;
 }
 
 /* carousel */
@@ -44,10 +45,6 @@ h1 {
     text-align: center;
 }
 
-.carousel {
-    height: 700px;
-}
-
 .carousel-inner img {
     width: 100%;
     height: auto;
@@ -58,4 +55,23 @@ h1 {
 i {
     font-size: 1.5rem;
     color: rgb(107, 107, 107);
+}
+
+
+/* media queries */
+@media screen and (max-width: 450px) {
+    .carousel {
+        height: 300px;
+    }
+
+    i {
+        font-size: 1.2rem;
+
+    }
+
+    h1 {
+        font-size: 1.2rem;
+
+    }
+
 }
