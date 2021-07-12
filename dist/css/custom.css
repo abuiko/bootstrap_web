@@ -1,0 +1,32 @@
+.logo {
+    width: 2.5rem;
+}
+
+.section-padding {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* flexbox styling */
+
+
+
+.flex-jc-c {
+    justify-content: center;
+}
+
+.flex-ai-c {
+    align-items: center;
+}
+
+
+/* font awesome styling */
+
+i {
+    font-size: 1.5rem;
+    color: rgb(107, 107, 107);
+}
