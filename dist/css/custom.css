@@ -106,8 +106,17 @@ i {
 
 .card-icon {
     position: absolute;
-    bottom: 3%;
+    top: 3%;
     right: 5%;
+}
+
+.card-title {
+    margin-bottom: 0rem;
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 1rem;
 }
 
 

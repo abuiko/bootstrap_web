@@ -190,10 +190,10 @@ function displayClothes(items) {
             </div>
             
             <div class="card-body d-flex align-items-center justify-content-between">
-                <div>
+                
                     <h5 class="card-title">${item.name}</h5>
-                    <p class="card-text">${item.price}</p>
-                </div>
+                    <p class="card-text">${item.price}$</p>
+                
                
             </div>
         </div>
