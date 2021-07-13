@@ -1,7 +1,9 @@
-// window.addEventListener("DOMContentLoaded", () => {
-//     displayClothes(clothes);
+window.addEventListener("DOMContentLoaded", () => {
+    displayClothes(clothes);
 
-// })
+})
+
+
 
 // Clothes Array
 
@@ -172,25 +174,31 @@ const clothes = [
 
 // containers
 
-// const clothesContainer = document.querySelector(".clothes");
+const clothesContainer = document.querySelector(".clothes");
 
 // functions
 
-// function displayClothes(items) {
-//     let displayClothes = items.map(item => {
-//         return ` <div class="col-6 col-md-4 col-lg-3">
-//         <div class="card">
-//             <img src=${item.img} alt=${item.name} class="card-img-top">
-//             <div class="card-body d-flex align-items-center justify-content-between">
-//                 <div>
-//                     <h5 class="card-title">${item.name}</h5>
-//                     <p class="card-text">${item.price}</p>
-//                 </div>
-//                 <div class="card-icon"><i class="far fa-heart"></i></div>
-//             </div>
-//         </div>
-//     </div>`
-//     })
-//     displayClothes.join('');
-//     clothesContainer.innerHTML = displayClothes;
-// }
+function displayClothes(items) {
+
+
+    let displayClothes = items.map(item => {
+        return ` <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+            <img src=${item.img} alt=${item.name} class="card-img-top">
+            <div class="card-body d-flex align-items-center justify-content-between">
+                <div>
+                    <h5 class="card-title">${item.name}</h5>
+                    <p class="card-text">${item.price}</p>
+                </div>
+                <div class="card-icon"><i class="far fa-heart"></i></div>
+            </div>
+        </div>
+    </div>`
+    })
+
+
+    let result = displayClothes.join("");
+    clothesContainer.innerHTML = result;
+}
+
+
