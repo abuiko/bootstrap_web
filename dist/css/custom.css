@@ -74,6 +74,17 @@ h1 {
     transition: all 3s ease-in-out;
 }
 
+.carousel-indicators {
+    margin-bottom: 3rem;
+}
+
+.carousel-indicators button {
+    margin-right: 1rem;
+    border: none;
+    background-color: #fff;
+    width: 1.875rem;
+}
+
 /* font awesome styling */
 
 i {
