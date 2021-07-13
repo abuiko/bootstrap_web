@@ -58,20 +58,58 @@
         </div>
     </section>
     <section>
-        <div class="carousel slide" id="carouselExampleControls" data-ride="carousel">
+        <div class="carousel slide carousel-fade" id="carouselExampleControls" data-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-target="#carouselBasicExample" data-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-target="#carouselBasicExample" data-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-target="#carouselBasicExample" data-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
 
-                    <img src="/dist/img/slider/slide1.jpg" alt="first slide" class="d-block w-100 img-fluid">
+                    <img src="/dist/img/slider/slide1.jpg" alt="first slide" class="d-block w-100">
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>
+                          Nulla vitae elit libero, a pharetra augue mollis interdum.
+                        </p>
+                      </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/dist/img/slider/slide2.jpg" alt="second slide" class="d-block w-100 img-fluid">
+                    <img src="/dist/img/slider/slide2.jpg" alt="second slide" class="d-block w-100">
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>
+                          Nulla vitae elit libero, a pharetra augue mollis interdum.
+                        </p>
+                      </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/dist/img/slider/slide3.jpg" alt="third slide" class="d-block w-100 img-fluid">
+                    <img src="/dist/img/slider/slide3.jpg" alt="third slide" class="d-block w-100">
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>
+                          Nulla vitae elit libero, a pharetra augue mollis interdum.
+                        </p>
+                      </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/dist/img/slider/slide4.jpg" alt="forth slide" class="d-block w-100 img-fluid">
+                    <img src="/dist/img/slider/slide4.jpg" alt="forth slide" class="d-block w-100">
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Forth slide label</h5>
+                        <p>
+                          Nulla vitae elit libero, a pharetra augue mollis interdum.
+                        </p>
+                      </div>
                 </div>
             </div>
             <a href="#carouselExampleControls" class="carousel-control-prev" role="button" data-slide="prev">
@@ -110,9 +148,105 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container-fluid p-0">
             <div class="row clothes">
-               
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="/dist/img/clothes/sweatshirt.jpeg" alt=${item.name} class="card-img-top">
+                        <div class="card-body d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                            </div>
+                            <div class="card-icon"><i class="far fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

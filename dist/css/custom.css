@@ -1,6 +1,7 @@
 body {
     max-width: 1280px;
     margin: auto;
+    font-size: 62.5%;
 }
 
 .logo {
@@ -54,6 +55,25 @@ h1 {
     height: 700px;
 }
 
+.carousel-caption {
+
+    position: absolute;
+    left: auto;
+    right: auto;
+    width: 50%;
+    height: 100%;
+    background-color: #2b2b2b;
+    opacity: 0.4;
+    bottom: 0;
+    right: 0;
+
+
+}
+
+.carousel-item {
+    transition: all 3s ease-in-out;
+}
+
 /* font awesome styling */
 
 i {
@@ -68,9 +88,8 @@ i {
 /* cards */
 .card {
     margin-bottom: 1rem;
-
+    /* width: 15rem; */
 }
-
 
 
 
