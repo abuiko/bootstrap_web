@@ -119,6 +119,28 @@ i {
     font-size: 1rem;
 }
 
+/* Buttons */
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* favorites */
+
+.text-box .message {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.text-box p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.text-box button a {
+    font-size: 1.1rem;
+}
 
 
 /* media queries */
@@ -149,6 +171,14 @@ i {
 
     .card-icon i {
         font-size: 1.4rem;
+    }
+
+    .text-box .message {
+        font-size: 1.2rem;
+    }
+
+    .text-box button a {
+        font-size: 0.8rem;
     }
 
 }
