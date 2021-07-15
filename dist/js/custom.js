@@ -205,4 +205,18 @@ function displayClothes(items) {
     clothesContainer.innerHTML = result;
 }
 
+const closeBtn = document.querySelector(".close-btn");
+const signInBtns = document.querySelectorAll(".signin-btn");
+const signInContainer = document.querySelector(".signin-wrapper");
+
+signInBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        signInContainer.classList.add("open");
+    })
+})
+
+closeBtn.addEventListener('click', () => {
+    signInContainer.classList.remove("open");
+})
+
 
