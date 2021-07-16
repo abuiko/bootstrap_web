@@ -195,7 +195,7 @@ function displayClothes(items) {
 
     let displayClothes = items.map(item => {
         return ` <div class="col-6 col-md-4 col-lg-3">
-        <div class="card">
+        <div class="card clothes-card" data-id="${item.id}">
             <div class="card-img-top">
             <img src=${item.img} alt=${item.name} class="img-fluid">
             <div class="card-icon"><i class="far fa-heart"></i></div>
@@ -215,19 +215,45 @@ function displayClothes(items) {
     clothesContainer.innerHTML = result;
 
     addToFavorites();
+
+
+
+
 }
 
 
 // toggles heart icon on click
-function addToFavorites() {
+function addToFavorites(items) {
     const heartIcons = document.querySelectorAll(".card-icon i");
     heartIcons.forEach(icon => {
         icon.addEventListener("click", (e) => {
             e.target.classList.toggle("far");
             e.target.classList.toggle("fas");
+            let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+
+            // let favoriteClothes = clothes[dataId - 1];
+            // let myObj_serialized = JSON.stringify(favoriteClothes);
+            // localStorage.setItem("favorites", myObj_serialized);
+
+            // let myObj_deserialized = JSON.parse(localStorage.getItem("favorites"));
+            // console.log(myObj_deserialized);
         })
     })
 }
+
+
+// let myObj = {
+//     name: "Alena",
+//     age: 29
+// }
+
+// let myObj_serialized = JSON.stringify(myObj);
+// localStorage.setItem("myObj", myObj_serialized);
+
+// let myobj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+// console.log(myobj_deserialized);
+
+
 
 
 

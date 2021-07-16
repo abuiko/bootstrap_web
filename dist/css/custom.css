@@ -105,13 +105,14 @@ i {
     cursor: pointer;
 }
 
-.fas {
+.card-icon .fas {
     color: rgb(172, 2, 2);
 }
 
 /* cards */
 .card {
     margin-bottom: 1rem;
+    cursor: pointer;
     /* width: 15rem; */
 }
 
