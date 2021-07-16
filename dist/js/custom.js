@@ -3,8 +3,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 })
 
-
-
 // Clothes Array
 
 const clothes = [
@@ -175,11 +173,25 @@ const clothes = [
 // containers
 
 const clothesContainer = document.querySelector(".clothes");
+const signInContainer = document.querySelector(".signin-wrapper");
+
+// event listeners
+const signInBtns = document.querySelectorAll(".signin-btn");
+signInBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        signInContainer.classList.add("open");
+    })
+})
+
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.addEventListener('click', () => {
+    signInContainer.classList.remove("open");
+})
 
 // functions
 
+// displays clothes cards on main page
 function displayClothes(items) {
-
 
     let displayClothes = items.map(item => {
         return ` <div class="col-6 col-md-4 col-lg-3">
@@ -193,30 +205,30 @@ function displayClothes(items) {
                 
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.price}$</p>
-                
-               
+                      
             </div>
         </div>
     </div>`
     })
 
-
     let result = displayClothes.join("");
     clothesContainer.innerHTML = result;
+
+    addToFavorites();
 }
 
-const closeBtn = document.querySelector(".close-btn");
-const signInBtns = document.querySelectorAll(".signin-btn");
-const signInContainer = document.querySelector(".signin-wrapper");
 
-signInBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        signInContainer.classList.add("open");
+// toggles heart icon on click
+function addToFavorites() {
+    const heartIcons = document.querySelectorAll(".card-icon i");
+    heartIcons.forEach(icon => {
+        icon.addEventListener("click", (e) => {
+            e.target.classList.toggle("far");
+            e.target.classList.toggle("fas");
+        })
     })
-})
+}
 
-closeBtn.addEventListener('click', () => {
-    signInContainer.classList.remove("open");
-})
+
 
 
