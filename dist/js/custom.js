@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
     displayClothes(clothes);
+    filterClothes(clothes);
 
 })
 
@@ -188,6 +189,9 @@ closeBtn.addEventListener('click', () => {
     signInContainer.classList.remove("open");
 })
 
+const filterBtns = document.querySelectorAll(".filter-btn");
+
+
 // functions
 
 // displays clothes cards on main page
@@ -215,12 +219,29 @@ function displayClothes(items) {
     clothesContainer.innerHTML = result;
 
     addToFavorites();
-
-
-
-
 }
 
+// FILTER FUNCTION
+function filterClothes(items) {
+    filterBtns.forEach(btn => btn.addEventListener("click", () => {
+        if (btn.innerText === "Tops") {
+            let tops = items.filter(item => item.type === "top");
+            displayClothes(tops);
+        } else if (btn.innerText === "Bottoms") {
+            let bottoms = items.filter(item => item.type === "bottom");
+            displayClothes(bottoms);
+        } else if (btn.innerText === "Dresses") {
+            let dresses = items.filter(item => item.type === "dress");
+            displayClothes(dresses);
+        } else {
+            displayClothes(items);
+        }
+    }))
+}
+// SORT FUNCTION
+function sortClothes(items) {
+
+}
 
 // toggles heart icon on click
 function addToFavorites(items) {
@@ -240,6 +261,7 @@ function addToFavorites(items) {
         })
     })
 }
+
 
 
 // let myObj = {
