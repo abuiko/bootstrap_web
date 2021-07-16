@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     displayClothes(clothes);
     filterClothes(clothes);
-
+    sortClothes(clothes);
 })
 
 // Clothes Array
@@ -190,7 +190,7 @@ closeBtn.addEventListener('click', () => {
 })
 
 const filterBtns = document.querySelectorAll(".filter-btn");
-
+const sortBtns = document.querySelectorAll(".sort-btn");
 
 // functions
 
@@ -223,7 +223,8 @@ function displayClothes(items) {
 
 // FILTER FUNCTION
 function filterClothes(items) {
-    filterBtns.forEach(btn => btn.addEventListener("click", () => {
+    filterBtns.forEach(btn => btn.addEventListener("click", (e) => {
+        e.preventDefault();
         if (btn.innerText === "Tops") {
             let tops = items.filter(item => item.type === "top");
             displayClothes(tops);
@@ -240,7 +241,19 @@ function filterClothes(items) {
 }
 // SORT FUNCTION
 function sortClothes(items) {
+    sortBtns.forEach(btn => btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (btn.innerText === "From Low To High") {
+            let fromLow = items.sort((item1, item2) => item1.price - item2.price);
+            displayClothes(fromLow);
+        } else if (btn.innerText === "From High To Low") {
+            let fromHigh = items.sort((item1, item2) => item2.price - item1.price);
+            displayClothes(fromHigh);
+        } else {
+            displayClothes(items);
+        }
 
+    }))
 }
 
 // toggles heart icon on click
