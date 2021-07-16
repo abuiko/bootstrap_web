@@ -249,8 +249,9 @@ function sortClothes(items) {
         } else if (btn.innerText === "From High To Low") {
             let fromHigh = items.sort((item1, item2) => item2.price - item1.price);
             displayClothes(fromHigh);
-        } else {
-            displayClothes(items);
+        } else if (btn.innerText === "Trending") {
+            let trending = items.sort((item1, item2) => item2.stars - item1.stars);
+            displayClothes(trending);
         }
 
     }))
