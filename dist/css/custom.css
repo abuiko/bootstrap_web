@@ -270,4 +270,13 @@ label {
         font-size: 0.8rem;
     }
 
+    .cart-area {
+        margin-top: 3rem;
+    }
+
+    .sign-in {
+        width: 350px;
+        height: 600px;
+    }
+
 }
