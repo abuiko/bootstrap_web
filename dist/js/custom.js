@@ -319,6 +319,8 @@ function displayRecommended(items) {
     })
     let result = recommended.join("");
     recommendedContainer.innerHTML = result;
+
+    addToFavorites();
 }
 
 generateSixRandom();
