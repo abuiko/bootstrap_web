@@ -197,13 +197,9 @@ export function addToFavorites(items) {
             let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
             if (existingEntries == null) existingEntries = [];
             let entry = clothes[dataId - 1];
-            console.log(typeof entry);
             localStorage.setItem("entry", JSON.stringify(entry));
             existingEntries.push(entry);
             localStorage.setItem("allEntries", JSON.stringify(existingEntries));
-
-
-
         })
     })
 }
