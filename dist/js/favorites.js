@@ -11,7 +11,7 @@ const favoritesContainer = document.getElementById("favorites");
 
 // local storage
 let items = JSON.parse(localStorage.getItem("allEntries"));
-console.log(items);
+
 
 // functions
 function displayClothes(items) {
@@ -21,7 +21,7 @@ function displayClothes(items) {
         <div class="card clothes-card" data-id="${item.id}">
             <div class="card-img-top">
             <img src=${item.img} alt=${item.name} class="img-fluid">
-            <div class="card-icon"><i class="far fa-heart"></i></div>
+            <div class="card-icon"><i class="fas fa-times" style="color: #6B6B6B;"></i></i></div>
             </div>
 
             <div class="card-body d-flex align-items-center justify-content-between">
@@ -37,7 +37,25 @@ function displayClothes(items) {
     let result = displayClothes.join("");
     favoritesContainer.innerHTML = result;
 
-    addToFavorites();
+    // remove from favorites
+    const closeIcons = document.querySelectorAll(".card-icon i");
+    closeIcons.forEach(icon => {
+        icon.addEventListener("click", (e) => {
+            let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+            const card = e.target.parentNode.parentNode.parentNode;
+            let items = JSON.parse(localStorage.getItem('allEntries'));
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].id === +dataId) {
+                    items.splice(i, 1);
+                    card.style.display = "none";
+                    break;
+                }
+            }
+
+            localStorage.setItem("allEntries", JSON.stringify(items));
+            displayClothes(items);
+        })
+    })
 }
 
 
