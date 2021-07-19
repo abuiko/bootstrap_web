@@ -193,13 +193,17 @@ export function addToFavorites(items) {
             e.target.classList.toggle("fas");
             let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
 
+            // add array of objects to LS (when click on heart icon)
+            let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+            if (existingEntries == null) existingEntries = [];
+            let entry = clothes[dataId - 1];
+            console.log(typeof entry);
+            localStorage.setItem("entry", JSON.stringify(entry));
+            existingEntries.push(entry);
+            localStorage.setItem("allEntries", JSON.stringify(existingEntries));
 
-            // let favoriteClothes = clothes[dataId - 1];
-            // let myObj_serialized = ;
-            // localStorage.setItem("favorites", JSON.stringify(favoriteClothes));
 
-            // let myObj_deserialized = JSON.parse(localStorage.getItem("favorites"));
-            // console.log(myObj_deserialized);
+
         })
     })
 }
