@@ -1,12 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    displayClothes(clothes);
-    filterClothes(clothes);
-    sortClothes(clothes);
-})
+// // Clothes Array
 
-// Clothes Array
-
-const clothes = [{
+export const clothes = [{
     id: 1,
     name: "Cotton Dress",
     price: 17.99,
@@ -170,96 +164,28 @@ const clothes = [{
 
 ]
 
-
-// containers
-
-const clothesContainer = document.getElementById("clothes");
-const signInContainer = document.querySelector(".signin-wrapper");
-const recommendedContainer = document.getElementById("recommended");
+//containers
+export const signInContainer = document.querySelector(".signin-wrapper");
 
 // event listeners
-const signInBtns = document.querySelectorAll(".signin-btn");
-signInBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        signInContainer.classList.add("open");
+export function openSignIn() {
+    const signInBtns = document.querySelectorAll(".signin-btn");
+    signInBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            signInContainer.classList.add("open");
+        })
     })
-})
-
-const closeBtn = document.querySelector(".close-btn");
-closeBtn.addEventListener('click', () => {
-    signInContainer.classList.remove("open");
-})
-
-const filterBtns = document.querySelectorAll(".filter-btn");
-const sortBtns = document.querySelectorAll(".sort-btn");
-
-// functions
-
-// displays clothes cards on main page
-function displayClothes(items) {
-
-    let displayClothes = items.map(item => {
-        return ` <div class="col-6 col-md-4 col-lg-3">
-        <div class="card clothes-card" data-id="${item.id}">
-            <div class="card-img-top">
-            <img src=${item.img} alt=${item.name} class="img-fluid">
-            <div class="card-icon"><i class="far fa-heart"></i></div>
-            </div>
-            
-            <div class="card-body d-flex align-items-center justify-content-between">
-                
-                    <h5 class="card-title">${item.name}</h5>
-                    <p class="card-text">${item.price}$</p>
-                      
-            </div>
-        </div>
-    </div>`
-    })
-
-    let result = displayClothes.join("");
-    clothesContainer.innerHTML = result;
-
-    addToFavorites();
 }
 
-// FILTER FUNCTION
-function filterClothes(items) {
-    filterBtns.forEach(btn => btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (btn.innerText === "Tops") {
-            let tops = items.filter(item => item.type === "top");
-            displayClothes(tops);
-        } else if (btn.innerText === "Bottoms") {
-            let bottoms = items.filter(item => item.type === "bottom");
-            displayClothes(bottoms);
-        } else if (btn.innerText === "Dresses") {
-            let dresses = items.filter(item => item.type === "dress");
-            displayClothes(dresses);
-        } else {
-            displayClothes(items);
-        }
-    }))
-}
-// SORT FUNCTION
-function sortClothes(items) {
-    sortBtns.forEach(btn => btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (btn.innerText === "From Low To High") {
-            let fromLow = items.sort((item1, item2) => item1.price - item2.price);
-            displayClothes(fromLow);
-        } else if (btn.innerText === "From High To Low") {
-            let fromHigh = items.sort((item1, item2) => item2.price - item1.price);
-            displayClothes(fromHigh);
-        } else if (btn.innerText === "Trending") {
-            let trending = items.sort((item1, item2) => item2.stars - item1.stars);
-            displayClothes(trending);
-        }
-
-    }))
+export function closeSignIn() {
+    const closeBtn = document.querySelector(".close-btn");
+    closeBtn.addEventListener('click', () => {
+        signInContainer.classList.remove("open");
+    })
 }
 
 // toggles heart icon on click
-function addToFavorites(items) {
+export function addToFavorites(items) {
     const heartIcons = document.querySelectorAll(".card-icon i");
     heartIcons.forEach(icon => {
         icon.addEventListener("click", (e) => {
@@ -279,57 +205,4 @@ function addToFavorites(items) {
 }
 
 
-// generate 6 random elements from array
 
-function generateSixRandom() {
-    let newArr = [];
-
-    for (let i = 0; i < 6; i++) {
-        let arr = clothes[Math.floor(Math.random() * 20)];
-        newArr.push(arr);
-    }
-
-
-    displayRecommended(newArr);
-}
-
-// display recommended clothes on cart page
-function displayRecommended(items) {
-
-    let recommended = items.map(item => {
-        return `<div class="col-lg-2 col-md-3 col-6">
-        <div class="card clothes-card">
-            <div class="card-img-top">
-                <img src=${item.img} class="img-fluid" alt="${item.name} ">
-                <div class="card-icon"><i class="far fa-heart"></i></div>
-            </div>
-
-            <div class="card-body d-flex align-items-center justify-content-between">
-
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">${item.price}</p>
-
-            </div>
-        </div>
-    </div>`
-
-
-    })
-    let result = recommended.join("");
-    recommendedContainer.innerHTML = result;
-
-    addToFavorites();
-}
-
-generateSixRandom();
-
-// let myObj = {
-//     name: "Alena",
-//     age: 29
-// }
-
-// let myObj_serialized = JSON.stringify(myObj);
-// localStorage.setItem("myObj", myObj_serialized);
-
-// let myobj_deserialized = JSON.parse(localStorage.getItem("myObj"));
-// console.log(myobj_deserialized);
