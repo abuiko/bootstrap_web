@@ -1,9 +1,7 @@
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     displayClothes(clothes);
     filterClothes(clothes);
     sortClothes(clothes);
-
-
 })
 
 // Clothes Array
@@ -175,9 +173,9 @@ const clothes = [{
 
 // containers
 
-const clothesContainer = document.querySelector(".clothes");
+const clothesContainer = document.getElementById("clothes");
 const signInContainer = document.querySelector(".signin-wrapper");
-const recommendedContainer = document.querySelector(".recommended");
+const recommendedContainer = document.getElementById("recommended");
 
 // event listeners
 const signInBtns = document.querySelectorAll(".signin-btn");
@@ -269,6 +267,7 @@ function addToFavorites(items) {
             e.target.classList.toggle("fas");
             let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
 
+
             // let favoriteClothes = clothes[dataId - 1];
             // let myObj_serialized = ;
             // localStorage.setItem("favorites", JSON.stringify(favoriteClothes));
@@ -294,12 +293,11 @@ function generateSixRandom() {
     displayRecommended(newArr);
 }
 
-
 // display recommended clothes on cart page
 function displayRecommended(items) {
 
     let recommended = items.map(item => {
-        return `<div class="col-2">
+        return `<div class="col-lg-2 col-md-3 col-6">
         <div class="card clothes-card">
             <div class="card-img-top">
                 <img src=${item.img} class="img-fluid" alt="${item.name} ">
