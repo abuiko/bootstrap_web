@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 // containers
 const favoritesContainer = document.getElementById("favorites");
+const emptyContainer = document.querySelector("empty-fav");
 
 // local storage
 let items = JSON.parse(localStorage.getItem("allEntries"));
@@ -51,9 +52,11 @@ function displayClothes(items) {
                     break;
                 }
             }
-
             localStorage.setItem("allEntries", JSON.stringify(items));
-            displayClothes(items);
+
+
+
+
         })
     })
 }

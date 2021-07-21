@@ -192,16 +192,21 @@ export function addToFavorites(items) {
             e.target.classList.toggle("far");
             e.target.classList.toggle("fas");
             let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+            addToLocalStorage("allEntries", dataId);
 
-            // add array of objects to LS (when click on heart icon)
-            let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
-            if (existingEntries == null) existingEntries = [];
-            let entry = clothes[dataId - 1];
-            localStorage.setItem("entry", JSON.stringify(entry));
-            existingEntries.push(entry);
-            localStorage.setItem("allEntries", JSON.stringify(existingEntries));
         })
     })
+}
+
+export function addToLocalStorage(name, id) {
+
+    // add array of objects to LS (when click on heart icon)
+    let existingEntries = JSON.parse(localStorage.getItem(name));
+    if (existingEntries == null) existingEntries = [];
+    let entry = clothes[id - 1];
+    localStorage.setItem("entry", JSON.stringify(entry));
+    existingEntries.push(entry);
+    localStorage.setItem(name, JSON.stringify(existingEntries));
 }
 
 
