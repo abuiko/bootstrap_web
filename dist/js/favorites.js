@@ -1,5 +1,5 @@
 import { clothes } from './custom.js';
-import { addToFavorites, openSignIn, closeSignIn } from './custom.js';
+// import { addToFavorites, openSignIn, closeSignIn } from './custom.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 // containers
 const favoritesContainer = document.getElementById("favorites");
-const emptyContainer = document.querySelector("empty-fav");
+const emptyContainer = document.querySelector(".empty-fav");
 
 // local storage
 let items = JSON.parse(localStorage.getItem("allEntries"));
-
-
+console.log(items);
+if (items.length === 0) {
+    emptyContainer.style.display = "block";
+}
 // functions
 function displayClothes(items) {
 
@@ -53,10 +55,6 @@ function displayClothes(items) {
                 }
             }
             localStorage.setItem("allEntries", JSON.stringify(items));
-
-
-
-
         })
     })
 }
