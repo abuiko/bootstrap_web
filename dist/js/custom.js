@@ -191,23 +191,44 @@ export function addToFavorites(items) {
         icon.addEventListener("click", (e) => {
             e.target.classList.toggle("far");
             e.target.classList.toggle("fas");
-            let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            addToLocalStorage("allEntries", dataId);
+            // let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+            // addToLocalStorage("allEntries", dataId);
+
+            const dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+            addToLocalStorage(dataId);
 
         })
     })
 }
 
-export function addToLocalStorage(name, id) {
+// export function addToLocalStorage(name, id) {
 
-    // add array of objects to LS (when click on heart icon)
-    let existingEntries = JSON.parse(localStorage.getItem(name));
-    if (existingEntries == null) existingEntries = [];
-    let entry = clothes[id - 1];
-    localStorage.setItem("entry", JSON.stringify(entry));
-    existingEntries.push(entry);
-    localStorage.setItem(name, JSON.stringify(existingEntries));
+//     // add array of objects to LS (when click on heart icon)
+//     let existingEntries = JSON.parse(localStorage.getItem(name));
+//     if (existingEntries == null) existingEntries = [];
+//     let entry = clothes[id - 1];
+//     localStorage.setItem("entry", JSON.stringify(entry));
+//     existingEntries.push(entry);
+//     localStorage.setItem(name, JSON.stringify(existingEntries));
+// }
+
+
+export function addToLocalStorage(id) {
+    const clothes = {
+        id
+    };
+    let items = getLocalStorage();
+    items.push(clothes);
+    localStorage.setItem('list', JSON.stringify(items));
 }
 
 
+export function getLocalStorage() {
+    return localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list')) : [];
+}
 
+
+// function addElement(e) {
+//     const dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+//     addToLocalStorage(dataId)
+// }

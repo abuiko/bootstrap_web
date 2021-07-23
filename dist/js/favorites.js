@@ -1,5 +1,5 @@
 import { clothes } from './custom.js';
-// import { addToFavorites, openSignIn, closeSignIn } from './custom.js';
+import { addToLocalStorage, addToFavorites, openSignIn, closeSignIn } from './custom.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -59,6 +59,10 @@ function displayClothes(items) {
     })
 }
 
+// function addElement(e) {
+//     const dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+//     addToLocalStorage(dataId)
+// }
 
 // openSignIn();
 // closeSignIn();
