@@ -191,9 +191,6 @@ export function addToFavorites(items) {
         icon.addEventListener("click", (e) => {
             e.target.classList.toggle("far");
             e.target.classList.toggle("fas");
-            // let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            // addToLocalStorage("allEntries", dataId);
-
             const dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
             addToLocalStorage(dataId);
 
