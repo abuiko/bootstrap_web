@@ -11,8 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // containers
 const clothesContainer = document.getElementById("clothes");
+const menuForm = document.querySelector(".menu-form");
+// buttons
 const filterBtns = document.querySelectorAll(".filter-btn");
 const sortBtns = document.querySelectorAll(".sort-btn");
+const formMenuBtn = document.querySelector(".navbar-toggler");
+formMenuBtn.addEventListener('click', () => {
+    menuForm.classList.toggle('open');
+})
 
 // functions
 

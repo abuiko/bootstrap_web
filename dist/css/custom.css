@@ -239,6 +239,16 @@ label {
     display: none;
 }
 
+.menu-form {
+    display: none;
+}
+
+.menu-form.open {
+    display: block;
+}
+
+
+
 /* media queries */
 @media screen and (max-width: 450px) {
     .carousel {

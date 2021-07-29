@@ -1,9 +1,10 @@
 import { clothes } from './custom.js';
-import { addToLocalStorage, addToFavorites, openSignIn, closeSignIn } from './custom.js';
+import { addToLocalStorage, addToFavorites, openSignIn, closeSignIn, getLocalStorage } from './custom.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // displayClothes(items);
+    // displayClothes(localStorageList);
+
 
 })
 // containers
@@ -11,6 +12,7 @@ const favoritesContainer = document.getElementById("favorites");
 const emptyContainer = document.querySelector(".empty-fav");
 
 // local storage
+
 
 // functions
 // function createListItem(valueID) {
@@ -40,6 +42,7 @@ const emptyContainer = document.querySelector(".empty-fav");
 
 //     favoritesContainer.appendChild(element);
 // }
+const localStorageList = getLocalStorage();
 
 
 // function displayClothes(items) {
@@ -66,22 +69,22 @@ const emptyContainer = document.querySelector(".empty-fav");
 //     favoritesContainer.innerHTML = result;
 
 //     // remove from favorites
-//     const closeIcons = document.querySelectorAll(".card-icon i");
-//     closeIcons.forEach(icon => {
-//         icon.addEventListener("click", (e) => {
-//             let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-//             const card = e.target.parentNode.parentNode.parentNode;
-//             let items = JSON.parse(localStorage.getItem('allEntries'));
-//             for (let i = 0; i < items.length; i++) {
-//                 if (items[i].id === +dataId) {
-//                     items.splice(i, 1);
-//                     card.style.display = "none";
-//                     break;
-//                 }
-//             }
-//             localStorage.setItem("allEntries", JSON.stringify(items));
-//         })
-//     })
+//     // const closeIcons = document.querySelectorAll(".card-icon i");
+//     // closeIcons.forEach(icon => {
+//     //     icon.addEventListener("click", (e) => {
+//     //         let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+//     //         const card = e.target.parentNode.parentNode.parentNode;
+//     //         let items = JSON.parse(localStorage.getItem('allEntries'));
+//     //         for (let i = 0; i < items.length; i++) {
+//     //             if (items[i].id === +dataId) {
+//     //                 items.splice(i, 1);
+//     //                 card.style.display = "none";
+//     //                 break;
+//     //             }
+//     //         }
+//     //         localStorage.setItem("allEntries", JSON.stringify(items));
+//     //     })
+//     // })
 // }
 
 // function addElement(e) {
@@ -89,5 +92,7 @@ const emptyContainer = document.querySelector(".empty-fav");
 //     addToLocalStorage(dataId)
 // }
 
+
+// compareIds(localStorageList, clothes);
 openSignIn();
 closeSignIn();
