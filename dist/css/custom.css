@@ -17,6 +17,10 @@ body {
     border: none;
 }
 
+.nav-link i {
+    font-size: 1.3rem;
+}
+
 /* jumbotron styling */
 
 .jumbotron-custom {
@@ -250,10 +254,19 @@ label {
 
 
 /* media queries */
+
+@media screen and (max-width: 1080px) {
+    .nav-link i {
+        font-size: 1.1rem;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .carousel {
         height: 300px;
     }
+
+
 
     i {
         font-size: 1.2rem;
@@ -296,4 +309,11 @@ label {
         height: 600px;
     }
 
+}
+
+
+@media screen and (max-width: 345px) {
+    .nav-link i {
+        font-size: 0.5rem;
+    }
 }

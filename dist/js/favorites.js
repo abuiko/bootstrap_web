@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const favoritesContainer = document.getElementById("favorites");
 const emptyContainer = document.querySelector(".empty-fav");
 
+
+
 // local storage
 
 
