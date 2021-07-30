@@ -258,6 +258,25 @@ label {
 }
 
 
+
+/* carousel */
+.carousel-item {
+
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+    z-index: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0s 0.25s ease-in-out;
+    transition: opacity 0s 0.25s ease-in-out;
+}
+
+
 /* media queries */
 
 @media screen and (max-width: 1080px) {
