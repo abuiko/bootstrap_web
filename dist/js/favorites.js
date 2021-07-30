@@ -1,3 +1,5 @@
+
+import { formMenuBtn } from './index.js';
 import { clothes } from './custom.js';
 import { addToLocalStorage, addToFavorites, openSignIn, closeSignIn, getLocalStorage } from './custom.js';
 
@@ -11,7 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 const favoritesContainer = document.getElementById("favorites");
 const emptyContainer = document.querySelector(".empty-fav");
 
-
+// event listeners
+formMenuBtn.forEach(btn => btn.addEventListener('click', () => {
+    menuForm.classList.toggle('open');
+}))
 
 // local storage
 

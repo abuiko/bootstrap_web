@@ -16,10 +16,12 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 const sortBtns = document.querySelectorAll(".sort-btn");
 
 
-const formMenuBtn = document.querySelector(".navbar-toggler");
-formMenuBtn.addEventListener('click', () => {
+export const formMenuBtn = document.querySelectorAll(".navbar-toggler");
+
+formMenuBtn.forEach(btn => btn.addEventListener('click', () => {
     menuForm.classList.toggle('open');
-})
+}))
+
 
 // functions
 
