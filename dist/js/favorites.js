@@ -19,9 +19,27 @@ formMenuBtn.forEach(btn => btn.addEventListener('click', () => {
 }))
 
 // local storage
-
+const localStorageList = getLocalStorage();
+console.log(localStorageList);
 
 // functions
+
+function addListItem(list1, list2) {
+    let newList = [];
+    for (let i = 0; i < list1.length; i++) {
+        // console.log(list1[i].id);
+        for (let j = 0; j < list2.length; j++) {
+            if (list1[i].id === list2[j].id) {
+                newList.push(list2[j].id);
+            }
+            // console.log(list2[j].id);
+        }
+    }
+    console.log(newList);
+
+}
+
+addListItem(localStorageList, clothes);
 // function createListItem(valueID) {
 //     const element = document.createElement('div');
 //     element.classList.add('card', 'clothes-card');
@@ -49,7 +67,7 @@ formMenuBtn.forEach(btn => btn.addEventListener('click', () => {
 
 //     favoritesContainer.appendChild(element);
 // }
-const localStorageList = getLocalStorage();
+
 
 
 // function displayClothes(items) {
