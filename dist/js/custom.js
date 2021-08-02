@@ -193,7 +193,9 @@ export function addToFavorites(items) {
             e.target.classList.toggle("far");
             e.target.classList.toggle("fas");
             const dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-            addToLocalStorage(dataId);
+            const parsedDataId = parseInt(dataId, 10);
+
+            addToLocalStorage(parsedDataId);
 
         })
     })
@@ -211,9 +213,9 @@ export function addToFavorites(items) {
 // }
 
 
-export function addToLocalStorage(id) {
+export function addToLocalStorage(valueId) {
     const clothes = {
-        id
+        id: valueId
     };
     let items = getLocalStorage();
     items.push(clothes);
