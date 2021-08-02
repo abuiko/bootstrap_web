@@ -21,9 +21,10 @@ formMenuBtn.forEach(btn => btn.addEventListener('click', () => {
 // local storage
 const localStorageList = getLocalStorage();
 const favorites = getMatch(localStorageList, clothes);
-console.log(favorites);
-// functions
 
+
+
+// functions
 
 // to find objects with the same id
 function getMatch(a, b) {
@@ -64,8 +65,13 @@ function displayClothes(items) {
     let result = displayClothes.join("");
     favoritesContainer.innerHTML = result;
 
-    //     // remove from favorites
-    //     // const closeIcons = document.querySelectorAll(".card-icon i");
+    // remove from favorites
+    const closeIcons = document.querySelectorAll(".card-icon i");
+    closeIcons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            console.log(icon);
+        })
+    })
     //     // closeIcons.forEach(icon => {
     //     //     icon.addEventListener("click", (e) => {
     //     //         let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
