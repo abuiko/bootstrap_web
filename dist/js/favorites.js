@@ -69,24 +69,20 @@ function displayClothes(items) {
     const closeIcons = document.querySelectorAll(".card-icon i");
     closeIcons.forEach(icon => {
         icon.addEventListener('click', (e) => {
-            console.log(icon);
+            let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
+            const card = e.target.parentNode.parentNode.parentNode;
+            let items = JSON.parse(localStorage.getItem('list'));
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].id == +dataId) {
+                    items.splice(i, 1);
+                    card.style.display = "none";
+                    break;
+                }
+            }
+            localStorage.setItem("list", JSON.stringify(items));
         })
     })
-    //     // closeIcons.forEach(icon => {
-    //     //     icon.addEventListener("click", (e) => {
-    //     //         let dataId = e.target.parentNode.parentNode.parentNode.getAttribute("data-id");
-    //     //         const card = e.target.parentNode.parentNode.parentNode;
-    //     //         let items = JSON.parse(localStorage.getItem('allEntries'));
-    //     //         for (let i = 0; i < items.length; i++) {
-    //     //             if (items[i].id === +dataId) {
-    //     //                 items.splice(i, 1);
-    //     //                 card.style.display = "none";
-    //     //                 break;
-    //     //             }
-    //     //         }
-    //     //         localStorage.setItem("allEntries", JSON.stringify(items));
-    //     //     })
-    //     // })
+
 }
 
 
