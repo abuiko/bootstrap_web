@@ -42,12 +42,21 @@ function displayClothes(items) {
                     <p class="card-text">${item.price}$</p>
 
             </div>
+            <button type="button" class="btn btn-dark quickview">Quick View</button>
         </div>
+       
     </div>`
     })
 
     let result = displayClothes.join("");
     clothesContainer.innerHTML = result;
+
+    const cards = document.querySelectorAll(".card");
+    // const quickViewBtns = document.querySelectorAll(".quickview");
+    cards.forEach(card => card.addEventListener('mouseover', (e) => {
+        const quickView = card.querySelector('button');
+        quickView.classList.toggle('open');
+    }))
 
     addToFavorites();
 }

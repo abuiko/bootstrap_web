@@ -118,6 +118,7 @@ i {
     margin-bottom: 1rem;
     cursor: pointer;
     /* width: 15rem; */
+    position: relative;
 }
 
 .card-img-top {
@@ -137,6 +138,18 @@ i {
 
 .card-text {
     font-size: 1rem;
+}
+
+.quickview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.quickview.open {
+    display: block;
 }
 
 /* Buttons */

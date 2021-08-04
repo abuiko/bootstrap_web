@@ -91,7 +91,7 @@ function displayClothes(items) {
 
 }
 
-console.log(typeof JSON.parse(localStorage.getItem('list')));
+
 
 openSignIn();
 closeSignIn();
