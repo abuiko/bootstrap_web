@@ -243,6 +243,10 @@ label {
     display: none;
 }
 
+.empty-fav.open {
+    display: block;
+}
+
 .menu-form {
     display: none;
 }
