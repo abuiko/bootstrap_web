@@ -83,7 +83,10 @@ function displayClothes(items) {
         })
     })
 
+
+
 }
+
 
 
 openSignIn();
