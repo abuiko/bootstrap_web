@@ -39,6 +39,7 @@ function generateSixRandom() {
 
     for (let i = 0; i < 6; i++) {
         let arr = clothes[Math.floor(Math.random() * 20)];
+
         newArr.push(arr);
     }
 

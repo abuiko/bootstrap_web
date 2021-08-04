@@ -43,27 +43,31 @@ function getMatch(a, b) {
 
 // to display found objects in the favories section
 function displayClothes(items) {
-
-    let displayClothes = items.map(item => {
-        return ` <div class="col-md-3 col-6">
-        <div class="card clothes-card" data-id="${item.id}">
-            <div class="card-img-top">
-            <img src=${item.img} alt=${item.name} class="img-fluid">
-            <div class="card-icon"><i class="fas fa-times" style="color: #6B6B6B;"></i></i></div>
+    if (JSON.parse(localStorage.getItem('list')).length > 0) {
+        let displayClothes = items.map(item => {
+            return ` <div class="col-md-3 col-6">
+            <div class="card clothes-card" data-id="${item.id}">
+                <div class="card-img-top">
+                <img src=${item.img} alt=${item.name} class="img-fluid">
+                <div class="card-icon"><i class="fas fa-times" style="color: #6B6B6B;"></i></i></div>
+                </div>
+    
+                <div class="card-body d-flex align-items-center justify-content-between">
+    
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">${item.price}$</p>
+    
+                </div>
             </div>
+        </div>`
+        })
 
-            <div class="card-body d-flex align-items-center justify-content-between">
+        let result = displayClothes.join("");
+        favoritesContainer.innerHTML = result;
 
-                    <h5 class="card-title">${item.name}</h5>
-                    <p class="card-text">${item.price}$</p>
-
-            </div>
-        </div>
-    </div>`
-    })
-
-    let result = displayClothes.join("");
-    favoritesContainer.innerHTML = result;
+    } else {
+        emptyContainer.classList.add('open');
+    }
 
     // remove from favorites
     const closeIcons = document.querySelectorAll(".card-icon i");
@@ -87,7 +91,7 @@ function displayClothes(items) {
 
 }
 
-
+console.log(typeof JSON.parse(localStorage.getItem('list')));
 
 openSignIn();
 closeSignIn();
